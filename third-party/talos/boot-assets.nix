@@ -1,51 +1,49 @@
 {pkgs, images, system, lock, extensions}: let
-  runImager = {name, profile}: pkgs.vmTools.runInLinuxVM (pkgs.stdenvNoCC.mkDerivation {
-    inherit name;
-    dontUnpack = true;
-    nativeBuildInputs = with pkgs; [
-      podman util-linux yq-go jq
-    ];
-    memSize = 4096;
-    src = profile;
-    IMAGER = images.imager;
-    configurePhase = ''
-      runHook preConfigure
-      export HOME="$TMPDIR/home"
-      mkdir -p $HOME/.config/containers/
-      cat <<EOF > $HOME/.config/containers/policy.json
-      {
-        "default": [{"type": "reject"}],
-        "transports": {"oci": {"": [{"type": "insecureAcceptAnything"}]}}
-      }
-      EOF
-
-      mkdir -p /sys/fs/cgroup
-      mount -t cgroup2 none /sys/fs/cgroup
-      tmpOut="$TMPDIR/out"
-      mkdir "$tmpOut"
-      runHook postConfiugre
+  runImager = {name,profile}: pkgs.stdenvNoCC.mkDerivation {
+    name = "runImager2";
+    src = images.imager;
+    PROFILE = profile;
+    nativeBuildInputs = with pkgs; [bubblewrap umoci jq util-linux];
+    unpackPhase = ''
+      runHook preUnpack
+      unshare -r umoci unpack --image "$src:${images.imager.imageRef}" .
+      runHook postUnpack
     '';
     buildPhase = ''
       runHook preBuild
-      cat "$src" | podman run -i -v $tmpOut:/out -v /nix/store:/nix/store --rm "oci:$IMAGER" -
+      cwd="$(cat config.json | jq -r .process.cwd)"
+      uid="$(cat config.json | jq -r .process.user.uid)"
+      gid="$(cat config.json | jq -r .process.user.gid)"
+      declare -a args="($(cat config.json | jq -r '.process.args | @sh'))"
+      declare -a envs="($(cat config.json | jq -r '.process.env | map(match("([^=]*)=(.*)").captures | ["--setenv"]+map(.string)) | flatten | @sh'))"
+      cat "$PROFILE" | bwrap \
+        --clearenv --cap-add ALL \
+        --uid "$uid" --gid "$gid" \
+        --chdir "$cwd" \
+        "''${envs[@]}" \
+        --unshare-all \
+        --bind rootfs / \
+        --bind /nix /nix \
+        --dev /dev \
+        "''${args[@]}" \
+        -
       runHook postBuild
     '';
     installPhase = ''
       runHook preInstall
 
-      readarray -t outFiles <<<"$(find "$tmpOut" -type f -mindepth 1)"
+      readarray -t outFiles <<<"$(find ./rootfs/out -type f -mindepth 1)"
 
       if [[ ''${#outFiles[@]} != 1 ]]; then
         echo "Expecting exactly one output file, but found ''${#outFiles[@]}" 1>&2
         exit 1
       fi
 
-      rm -rf "$out"
       cp "''${outFiles[0]}" "$out"
 
       runHook postInstall
     '';
-  });
+  };
   # TODO
   arch = {
     "x86_64" = "amd64";
