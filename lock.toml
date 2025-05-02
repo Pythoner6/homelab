@@ -1,9 +1,9 @@
 [talos]
 version = "v1.10.0"
 [talos.talosctl]
-datasource = "github-release-attachments"
 package = "siderolabs/talos"
-digest = "sha256:6628ed5d7edd4bb6482e49eeb5c4533307888410c2f559d4e71214174d425744"
+srcHash = "sha256-T/iFzMl3+tZu3EFNyof+QIywJA7ZTLm1asvy/q97Dus="
+vendorHash = "sha256-aFxeKyBcMdw5WOTRvXRofO2jA7rrQNaJGrZw3mcqvXE="
 [talos.images.installer]
 ref = "ghcr.io/siderolabs/installer"
 digest = "sha256:43f1f152ef523d1d777248af7d410b6184871d4d31f39d7b0ffecd198b984af6"

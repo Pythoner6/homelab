@@ -1,4 +1,4 @@
-{pkgs, lib, makePackageSet, splicePackages, system}: let
+{pkgs, pkgs-unstable, lib, makePackageSet, splicePackages, system}: let
   doImport = path: scope: let
     imported = scope.callPackage path {};
     type = builtins.typeOf imported;
@@ -28,7 +28,7 @@
 
   baseScope = {
     newScope = extra: lib.callPackageWith ({
-      inherit splicePackages pkgs lib system;
+      inherit splicePackages pkgs pkgs-unstable lib system;
       lock = lib.importTOML ./lock.toml;
     } // extra);
   };
