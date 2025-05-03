@@ -1,3 +1,4 @@
+# === nix.oci.pull ===
 {pkgs, lib}:  let
   orasFetch = type: {image, tag ? null, digest}: let
     fetchType = if type == "blob" || type == "manifest" then type else throw "orasFetch type must be blob or manifest, got ${type}";
@@ -21,56 +22,51 @@
     outputHash = hash;
   };
 
-  fetchImage = {image, digest, arch, tag ? null}: let
+  fetchImage = {image, digest, arch, tag, descriptor ? null}: let
     manifestDrv = orasFetch "manifest" {inherit image digest tag;};
     manifest = lib.importJSON manifestDrv;
     # If we get an index, pick a manifest from it and recurse
     desc = builtins.head (builtins.filter (m: m.platform.architecture == arch) manifest.manifests);
-    fetchedImage = fetchImage {inherit image arch; digest = desc.digest;};
+    fetchedImage = fetchImage {
+      inherit image arch tag;
+      digest = desc.digest;
+      descriptor = desc;
+    };
     # If we got a manifest, fetch it's config and all the layer blobs
-    config = orasFetch "blob" { inherit image; digest = manifest.config.digest; };
-    configParsed = lib.importJSON config;
+    ociLayoutPath = digest: "blobs/${lib.strings.replaceStrings [":"] ["/"] digest}";
     linkFarm = (pkgs.linkFarm "${image}-image-${digest}" (
       [
-        { name = "manifest.json"; path = manifestDrv; }
-        { name = builtins.elemAt (lib.strings.splitString ":" manifest.config.digest) 1; path = orasFetch "blob" {inherit image; digest = manifest.config.digest; }; }
-        { name = "version"; path = pkgs.writeText "version" ''
-          Directory Transport Version: 1.1
-        ''; }
+        { name = ociLayoutPath digest; path = manifestDrv; }
+        { name = ociLayoutPath manifest.config.digest; path = orasFetch "blob" {inherit image; digest = manifest.config.digest; }; }
+        { name = "oci-layout"; path = pkgs.writeText "oci-layout" ''{"imageLayoutVersion":"1.0.0"}''; }
+        {
+          name = "index.json";
+          path = pkgs.stdenvNoCC.mkDerivation {
+            name = "${image}-index-${digest}";
+            phases = ["installPhase"];
+            nativeBuildInputs = with pkgs; [jq];
+            DESC = builtins.toJSON (lib.attrsets.recursiveUpdate descriptor {annotations."org.opencontainers.image.ref.name" = tag;});
+            installPhase = ''
+              runHook preInstall
+              jq -n -c --sort-keys --argjson desc "$DESC" "$(
+              cat <<'EOF'
+              {
+                schemaVersion: 2,
+                manifests: [$desc],
+              }
+              EOF
+              )" > "$out"
+              runHook postInstall
+            '';
+          };
+        }
       ] ++
-      (builtins.map (l: {name = builtins.elemAt (lib.strings.splitString ":" l.digest) 1; path = orasFetch "blob" {inherit image; digest = l.digest;};}) manifest.layers)
-    )) // {imageConfig = configParsed;};
+      (builtins.map (l: {name = ociLayoutPath l.digest; path = orasFetch "blob" {inherit image; digest = l.digest;};}) manifest.layers)
+    ));
   in {
     "application/vnd.oci.image.index.v1+json" = fetchedImage;
     "application/vnd.docker.distribution.manifest.list.v2+json" = fetchedImage;
     "application/vnd.oci.image.manifest.v1+json" = linkFarm;
     "application/vnd.docker.distribution.manifest.v2+json" = linkFarm;
-  }.${manifest.mediaType};
-in args@{image, tag, digest, arch}: let
-  imageDrv = fetchImage args;
-  platform = (
-    if imageDrv.imageConfig ? os then {os = imageDrv.imageConfig.os;} else {}
-  ) // (
-    if imageDrv.imageConfig ? architecture then {architecture = imageDrv.imageConfig.architecture;} else {}
-  );
-# TODO: could probably build the oci layout directly
-# instead of using the dir: transport and copying with skopeo?
-in pkgs.stdenvNoCC.mkDerivation {
-  name = builtins.replaceStrings ["/" ":"] ["-" "-"] "${image}-${digest}-${arch}";
-  src = imageDrv;
-  phases = ["buildPhase"];
-  IMAGE_REF = "${image}:${tag}";
-  PLATFORM = builtins.toJSON platform;
-  nativeBuildInputs = with pkgs; [
-    skopeo moreutils jq
-  ];
-  buildPhase = ''
-    runHook preBuild
-    skopeo copy --insecure-policy "dir:$src" "oci:$out:$IMAGE_REF"
-    jq -c --argjson platform "$PLATFORM" '.manifests[0].platform = $platform' "$out/index.json" | sponge "$out/index.json"
-    runHook postBuild
-  '';
-  passthru = {
-    imageRef = "${image}:${tag}";
-  };
-}
+  }.${manifest.mediaType} // {imageRef = tag;};
+in args@{image,digest,arch,tag}: fetchImage args

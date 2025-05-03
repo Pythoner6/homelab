@@ -1,9 +1,5 @@
-{lib, images, nix, system}: let
-  arch = {
-    "x86_64-linux" = "amd64";
-    "aarch64-linux" = "arm64";
-  }.${system};
-  lines = lib.strings.splitString "\n" (builtins.readFile "${nix.oci.unpack images.extensions}/image-digests");
+{lib, images, nix, system}: arch: let
+  lines = lib.strings.splitString "\n" (builtins.readFile "${nix.oci.unpack (images.extensions arch)}/image-digests");
   parseRef = str: let
     match = builtins.match "^(.*):(.*)@(.*)$" str;
   in if match == null then throw "Couldn't parse image ref: ${str}" else {

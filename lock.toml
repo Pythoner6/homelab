@@ -13,3 +13,6 @@ digest = "sha256:4b3c4df4ad0763965349bfb48c4242b880bf8d82ae2bd1f053694ad7f4bf37e
 [talos.images.extensions]
 ref = "ghcr.io/siderolabs/extensions"
 digest = "sha256:8ef9c1df17d1179282a2e8b7fb10494a29fa5b1247463d8efe634b4329ef49eb"
+[talos.images.overlays]
+ref = "ghcr.io/siderolabs/overlays"
+digest = "sha256:033f9d44aa70970f926564d68b6050c81c24158b4b8c375b19dcbadcfa774b62"

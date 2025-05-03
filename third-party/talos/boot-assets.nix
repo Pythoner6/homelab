@@ -1,75 +1,82 @@
-{pkgs, images, system, lock, extensions}: let
-  runImager = {name,profile}: pkgs.stdenvNoCC.mkDerivation {
-    name = "runImager2";
-    src = images.imager;
-    PROFILE = profile;
-    nativeBuildInputs = with pkgs; [bubblewrap umoci jq util-linux];
-    unpackPhase = ''
-      runHook preUnpack
-      unshare -r umoci unpack --image "$src:${images.imager.imageRef}" .
-      runHook postUnpack
-    '';
-    buildPhase = ''
-      runHook preBuild
-      cwd="$(cat config.json | jq -r .process.cwd)"
-      uid="$(cat config.json | jq -r .process.user.uid)"
-      gid="$(cat config.json | jq -r .process.user.gid)"
-      declare -a args="($(cat config.json | jq -r '.process.args | @sh'))"
-      declare -a envs="($(cat config.json | jq -r '.process.env | map(match("([^=]*)=(.*)").captures | ["--setenv"]+map(.string)) | flatten | @sh'))"
-      cat "$PROFILE" | bwrap \
-        --new-session \
-        --clearenv --cap-add ALL \
-        --uid "$uid" --gid "$gid" \
-        --chdir "$cwd" \
-        "''${envs[@]}" \
-        --unshare-all \
-        --bind rootfs / \
-        --ro-bind /nix /nix \
-        --dev /dev \
-        "''${args[@]}" \
-        -
-      runHook postBuild
-    '';
-    installPhase = ''
-      runHook preInstall
-
-      readarray -t outFiles <<<"$(find ./rootfs/out -type f -mindepth 1)"
+{pkgs, lib, nix, images, lock, extensions, overlays}: let
+  hostArch = {
+    "x86_64" = "amd64";
+    "aarch64" = "arm64";
+  }.${pkgs.hostPlatform.parsed.cpu.name};
+  makeProfile = let
+    extensions' = extensions;
+  in {
+    arch ? hostArch,
+    overlay ? null,
+    extensions ? [],
+    platform ? "metal",
+    secureboot ? { enabled = false; },
+    customization ? null
+  }: (if customization == null then {} else {
+    inherit customization;
+  }) // (if overlay == null then {} else {
+    overlay = overlay // {
+      image = let
+        name = if overlay ? image then overlay.image else overlay.name;
+      in if !(builtins.isString name) then throw "Custom overlays not supported yet"
+      else {
+        ociPath = (overlays hostArch).${name};
+        imageRef = "localhost:${(overlays hostArch).${name}.imageRef}";
+      };
+    };
+  }) // {
+    inherit arch platform;
+    secureboot = secureboot.enabled;
+    version = lock.talos.version;
+    input = (if overlay == null then {} else {
+      overlayInstaller = let
+          name = if overlay ? image then overlay.image else overlay.name;
+      in if !(builtins.isString name) then throw "Custom overlays not supported yet"
+      else {
+        ociPath = (overlays hostArch).${name};
+        imageRef = "localhost:${(overlays hostArch).${name}.imageRef}";
+      };
+    }) // {
+      baseInstaller = let
+        img = images.installer arch;
+      in {
+        ociPath = img;
+        imageRef = "localhost:${img.imageRef}";
+      };
+      systemExtensions = builtins.map (ext: let
+        image = if lib.attrsets.isDerivation ext then ext else (extensions' arch).${ext};
+      in{
+        ociPath = image;
+        imageRef = "localhost:${image.imageRef}";
+      }) extensions;
+    };
+  };
+in rec {
+  installer = profile: nix.oci.run {
+    image = images.imager hostArch;
+    cmd = ["-"];
+    volumes = {
+      "/nix" = "/nix";
+    };
+    stdin = pkgs.writeText "profile" (builtins.toJSON (makeProfile profile // {
+      output = {
+        kind = "installer";
+        outFormat = "raw";
+      };
+    }));
+    extraNativeBuildInputs = with pkgs; [skopeo];
+    install = ''
+      readarray -t outFiles <<<"$(find ./out -type f -mindepth 1)"
 
       if [[ ''${#outFiles[@]} != 1 ]]; then
         echo "Expecting exactly one output file, but found ''${#outFiles[@]}" 1>&2
         exit 1
       fi
 
-      cp "''${outFiles[0]}" "$out"
-
-      runHook postInstall
+      export HOME="$TMPDIR"
+      mkdir -p "$HOME/.config/containers/"
+      echo '{"default":[{"type":"insecureAcceptAnything"}]}' > "$HOME/.config/containers/policy.json"
+      skopeo copy "docker-archive:''${outFiles[0]}" "oci:$out"
     '';
-  };
-  # TODO
-  arch = {
-    "x86_64" = "amd64";
-    "aarch64" = "arm64";
-  }.${pkgs.hostPlatform.parsed.cpu.name};
-in {
-  # TODO: parameterize this
-  installer = runImager {
-    name = "installer";
-    profile = pkgs.writeText "profile" (builtins.toJSON {
-      inherit arch;
-      platform = "metal";
-      secureboot = false;
-      version = lock.talos.version;
-      input = {
-        baseInstaller = {
-          ociPath = images.installer;
-          imageRef = images.installer.imageRef;
-        };
-        systemExtensions = builtins.map (ext: {ociPath = extensions.${ext}; imageRef = extensions.${ext}.imageRef;}) ["kata-containers"];
-      };
-      output = {
-        kind = "installer";
-        outFormat = "raw";
-      };
-    });
   };
 }

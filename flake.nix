@@ -25,6 +25,10 @@
         _module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
         inherit lab;
         packages = {
+          test = lab.third-party.talos.boot-assets.installer {
+            overlay.name = "rpi_generic";
+            extensions = ["kata-containers"];
+          };
         };
         devShells = {
           default = pkgs.mkShell {
