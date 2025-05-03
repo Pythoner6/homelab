@@ -3,6 +3,7 @@
     "x86_64" = "amd64";
     "aarch64" = "arm64";
   }.${pkgs.hostPlatform.parsed.cpu.name};
+
   makeProfile = let
     extensions' = extensions;
   in {
@@ -33,8 +34,8 @@
           name = if overlay ? image then overlay.image else overlay.name;
       in if !(builtins.isString name) then throw "Custom overlays not supported yet"
       else {
-        ociPath = (overlays hostArch).${name};
-        imageRef = "localhost:${(overlays hostArch).${name}.imageRef}";
+        ociPath = (overlays arch).${name};
+        imageRef = "localhost:${(overlays arch).${name}.imageRef}";
       };
     }) // {
       baseInstaller = let
@@ -51,7 +52,7 @@
       }) extensions;
     };
   };
-in rec {
+in {
   installer = profile: nix.oci.run {
     image = images.imager hostArch;
     cmd = ["-"];

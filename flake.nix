@@ -26,6 +26,7 @@
         inherit lab;
         packages = {
           test = lab.third-party.talos.boot-assets.installer {
+            arch = "arm64";
             overlay.name = "rpi_generic";
             extensions = ["kata-containers"];
           };
