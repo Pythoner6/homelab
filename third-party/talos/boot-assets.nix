@@ -17,13 +17,14 @@
       declare -a args="($(cat config.json | jq -r '.process.args | @sh'))"
       declare -a envs="($(cat config.json | jq -r '.process.env | map(match("([^=]*)=(.*)").captures | ["--setenv"]+map(.string)) | flatten | @sh'))"
       cat "$PROFILE" | bwrap \
+        --new-session \
         --clearenv --cap-add ALL \
         --uid "$uid" --gid "$gid" \
         --chdir "$cwd" \
         "''${envs[@]}" \
         --unshare-all \
         --bind rootfs / \
-        --bind /nix /nix \
+        --ro-bind /nix /nix \
         --dev /dev \
         "''${args[@]}" \
         -

@@ -29,7 +29,7 @@
         devShells = {
           default = pkgs.mkShell {
             packages = (with pkgs; [
-              jq oras nixd
+              jq nixd
             ]) ++ (with lab; [
               third-party.talos.talosctl
               third-party.cue
