@@ -1,18 +1,21 @@
 [talos]
-version = "v1.10.0"
+version = "v1.10.1"
 [talos.talosctl]
 package = "siderolabs/talos"
-srcHash = "sha256-T/iFzMl3+tZu3EFNyof+QIywJA7ZTLm1asvy/q97Dus="
-vendorHash = "sha256-aFxeKyBcMdw5WOTRvXRofO2jA7rrQNaJGrZw3mcqvXE="
+srcHash = "sha256-szu/tr97T9pBFmw/D9muh3KAP/yN9rk7DvyscAw3gIQ="
+vendorHash = "sha256-i+lUT/+ICqojOZo08uNfP7CFZM7eeZ9s5v6qL/pZUho="
+[talos.imager]
+srcHash = "sha256-szu/tr97T9pBFmw/D9muh3KAP/yN9rk7DvyscAw3gIQ="
+vendorHash = "sha256-i+lUT/+ICqojOZo08uNfP7CFZM7eeZ9s5v6qL/pZUho="
 [talos.images.installer]
 ref = "ghcr.io/siderolabs/installer"
-digest = "sha256:43f1f152ef523d1d777248af7d410b6184871d4d31f39d7b0ffecd198b984af6"
+digest = "sha256:19f56918287c675f02f788d7e435ba859a6d901662de5eaf737e0e3b1c9d836d"
 [talos.images.imager]
 ref = "ghcr.io/siderolabs/imager"
-digest = "sha256:4b3c4df4ad0763965349bfb48c4242b880bf8d82ae2bd1f053694ad7f4bf37e1"
+digest = "sha256:6f8e58fd5ba97d6bf6c20fba52f8b0c6236d2723ee4eb40873228bcf5a39fb43"
 [talos.images.extensions]
 ref = "ghcr.io/siderolabs/extensions"
-digest = "sha256:8ef9c1df17d1179282a2e8b7fb10494a29fa5b1247463d8efe634b4329ef49eb"
+digest = "sha256:cbaabe8ff0b90a025be05ecaf990db209caf4f23c01d40bb0d37a6cddf5bbee6"
 [talos.images.overlays]
 ref = "ghcr.io/siderolabs/overlays"
-digest = "sha256:033f9d44aa70970f926564d68b6050c81c24158b4b8c375b19dcbadcfa774b62"
+digest = "sha256:c7603238a803779798d52fb4b464434904be9abdd4f4c69ab270fc9a0ed24706"

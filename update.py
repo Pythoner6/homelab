@@ -50,6 +50,7 @@ with tempfile.TemporaryDirectory() as repo_dir:
     "nix-hash", "--sri", "--type", "sha256", repo_dir
   ], check=True, encoding='utf-8', stdout=subprocess.PIPE)
   lock["talos"]["talosctl"]["srcHash"] = hash.stdout.strip()
+  lock["talos"]["imager"]["srcHash"] = hash.stdout.strip()
 
   # TODO: because this can depend on the environment, this is
   #       not as reproducible as I'd like...
@@ -63,6 +64,7 @@ with tempfile.TemporaryDirectory() as repo_dir:
   ], check=True, encoding='utf-8', stdout=subprocess.PIPE)
 
   lock["talos"]["talosctl"]["vendorHash"] = hash.stdout.strip()
+  lock["talos"]["imager"]["vendorHash"] = hash.stdout.strip()
 
 with open(os.path.join(script_dir, "lock.toml"), "w") as f:
     tomlkit.dump(lock, f)

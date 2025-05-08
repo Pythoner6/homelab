@@ -57,6 +57,7 @@ in {
     image = images.imager hostArch;
     cmd = ["-"];
     volumes = {
+      "." = "/out";
       "/nix" = "/nix";
     };
     stdin = pkgs.writeText "profile" (builtins.toJSON (makeProfile profile // {
@@ -67,7 +68,7 @@ in {
     }));
     extraNativeBuildInputs = with pkgs; [skopeo];
     install = ''
-      readarray -t outFiles <<<"$(find ./out -type f -mindepth 1)"
+      readarray -t outFiles <<<"$(find . -type f -mindepth 1)"
 
       if [[ ''${#outFiles[@]} != 1 ]]; then
         echo "Expecting exactly one output file, but found ''${#outFiles[@]}" 1>&2
@@ -78,6 +79,37 @@ in {
       mkdir -p "$HOME/.config/containers/"
       echo '{"default":[{"type":"insecureAcceptAnything"}]}' > "$HOME/.config/containers/policy.json"
       skopeo copy "docker-archive:''${outFiles[0]}" "oci:$out"
+    '';
+  };
+  image = profile: nix.oci.run {
+    image = images.imager hostArch;
+    cmd = ["-"];
+    volumes = {
+      "." = "/out";
+      "/nix" = "/nix";
+      "/dev" = "/dev";
+    };
+    stdin = pkgs.writeText "profile" (builtins.toJSON (makeProfile profile // {
+      output = {
+        kind = "image";
+        # TODO: parameterize
+        imageOptions = {
+          diskSize = 1306525696;
+          diskFormat = "raw";
+          bootloader = "grub";
+        };
+        outFormat = ".xz";
+      };
+    }));
+    install = ''
+      readarray -t outFiles <<<"$(find . -type f -mindepth 1)"
+
+      if [[ ''${#outFiles[@]} != 1 ]]; then
+        echo "Expecting exactly one output file, but found ''${#outFiles[@]}" 1>&2
+        exit 1
+      fi
+
+      cp "''${outFiles[0]}" "$out"
     '';
   };
 }

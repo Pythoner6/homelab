@@ -30,11 +30,16 @@
             overlay.name = "rpi_generic";
             extensions = ["kata-containers"];
           };
+          test2 = lab.third-party.talos.boot-assets.image {
+            arch = "arm64";
+            overlay.name = "rpi_generic";
+            extensions = ["kata-containers"];
+          };
         };
         devShells = {
           default = pkgs.mkShell {
             packages = (with pkgs; [
-              jq nixd
+              jq nixd crane
             ]) ++ (with lab; [
               third-party.talos.talosctl
               third-party.cue
