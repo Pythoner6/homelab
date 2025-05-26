@@ -1,0 +1,535 @@
+execve("/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64/bin/go", ["/home/joseph/go/pkg/mod/golang.o"..., "list", "-m", "-versions", "github.com/pythoner6/netserv"], 0x7ffe04db4bf0 /* 193 vars */) = 0
+arch_prctl(ARCH_SET_FS, 0x109b430)      = 0
+sched_getaffinity(0, 8192, [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]) = 8
+openat(AT_FDCWD, "/sys/kernel/mm/transparent_hugepage/hpage_pmd_size", O_RDONLY) = 3
+read(3, "2097152\n", 20)                = 8
+close(3)                                = 0
+mmap(NULL, 262144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe26b499000
+mmap(NULL, 131072, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe26b479000
+mmap(NULL, 1048576, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe26b379000
+mmap(NULL, 8388608, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe26ab79000
+mmap(NULL, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe266b79000
+mmap(NULL, 536870912, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe246b79000
+mmap(NULL, 536870912, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe226b79000
+mmap(0xc000000000, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xc000000000
+mmap(NULL, 33554432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224b79000
+madvise(0x7fe224b79000, 33554432, MADV_NOHUGEPAGE) = 0
+mmap(NULL, 68624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224b68000
+mmap(0xc000000000, 4194304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xc000000000
+mmap(0x7fe26b479000, 131072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe26b479000
+mmap(0x7fe26b3f9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe26b3f9000
+mmap(0x7fe26af7f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe26af7f000
+mmap(0x7fe268ba9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe268ba9000
+mmap(0x7fe256cf9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe256cf9000
+mmap(0x7fe236cf9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe236cf9000
+mmap(NULL, 1048576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224a68000
+madvise(0x7fe224a68000, 1048576, MADV_NOHUGEPAGE) = 0
+mmap(NULL, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224a58000
+mmap(NULL, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224a48000
+rt_sigprocmask(SIG_SETMASK, NULL, [], 8) = 0
+fcntl(0, F_GETFD)                       = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(2, F_GETFD)                       = 0
+mmap(NULL, 262144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224a08000
+sigaltstack(NULL, {ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=0}) = 0
+sigaltstack({ss_sp=0xc000006000, ss_flags=0, ss_size=32768}, NULL) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+gettid()                                = 469285
+rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGHUP, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGILL, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGTRAP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTRAP, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGABRT, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGBUS, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGFPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGFPE, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGUSR1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGUSR1, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSEGV, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGUSR2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGUSR2, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGPIPE, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGALRM, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGSTKFLT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSTKFLT, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGCHLD, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGURG, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGURG, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGXCPU, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGXFSZ, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGVTALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGVTALRM, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGPROF, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGPROF, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGWINCH, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGWINCH, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGIO, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGPWR, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGPWR, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSYS, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRTMIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_1, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_3, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_3, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_4, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_4, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_5, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_5, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_6, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_6, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_7, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_7, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_8, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_8, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_9, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_9, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_10, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_10, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_11, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_11, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_12, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_12, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_13, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_13, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_14, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_14, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_15, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_15, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_16, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_16, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_17, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_17, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_18, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_18, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_19, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_19, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_20, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_20, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_21, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_21, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_22, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_22, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_23, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_23, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_24, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_24, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_25, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_25, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_26, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_26, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_27, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_27, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_28, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_28, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_29, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_29, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_30, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_30, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_31, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_31, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigaction(SIGRT_32, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGRT_32, {sa_handler=0x47f1a0, sa_mask=~[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x47f2e0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, ~[], [], 8) = 0
+clone(child_stack=0xc00006e000, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS, tls=0xc0000aa098) = 469286
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, ~[], [], 8) = 0
+clone(child_stack=0xc0000c4000, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS, tls=0xc0000aa898) = 469287
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 0
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 0
+rt_sigprocmask(SIG_SETMASK, ~[], [], 8) = 0
+clone(child_stack=0xc0000d6000, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS, tls=0xc0000ab098) = 469289
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+futex(0xc0000ab148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc000100148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=512*1024}) = 0
+prlimit64(0, RLIMIT_NOFILE, {rlim_cur=524287, rlim_max=512*1024}, NULL) = 0
+fcntl(0, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+futex(0xc000100148, FUTEX_WAKE_PRIVATE, 1) = 1
+mmap(NULL, 262144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe2249c8000
+fcntl(1, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+fcntl(2, F_GETFL)                       = 0x8001 (flags O_WRONLY|O_LARGEFILE)
+openat(AT_FDCWD, "/home/joseph/.config/go/env", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+futex(0x109ce20, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc0000aa528, FUTEX_WAKE_PRIVATE, 1) = 1
+readlinkat(AT_FDCWD, "/proc/self/exe", "/home/joseph/go/pkg/mod/golang.o"..., 128) = 79
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64/pkg/tool", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "", 0xc0001346b8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64/go.env", O_RDONLY|O_CLOEXEC) = 3
+fcntl(3, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_create1(EPOLL_CLOEXEC)            = 4
+eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 5
+epoll_ctl(4, EPOLL_CTL_ADD, 5, {events=EPOLLIN, data=0x10bb3c8}) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 3, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200001}) = -1 EPERM (Operation not permitted)
+fcntl(3, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+fstat(3, {st_mode=S_IFREG|0444, st_size=505, ...}) = 0
+read(3, "# This file contains the initial"..., 512) = 505
+read(3, "", 7)                          = 0
+close(3)                                = 0
+futex(0xc0000ab148, FUTEX_WAKE_PRIVATE, 1) = 1
+newfstatat(AT_FDCWD, "/nix/store/4apajimszc47rxwcpvc3g3rj2icinl71-gcc-wrapper-13.3.0/bin/gccgo", 0xc000135e48, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/4krab2h0hd4wvxxmscxrw21pl77j4i7j-gcc-13.3.0/bin/gccgo", 0xc0001a8038, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/zw5haplzbwjgbp3yykhm6iprkpfppzxb-glibc-2.40-36-bin/bin/gccgo", 0xc0001a8108, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/b1wvkjx96i3s7wblz38ya0zr8i93zbc5-coreutils-9.5/bin/gccgo", 0xc0001a81d8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/x9as7x6f7cdgcskvvn3yp02m662krr7y-binutils-wrapper-2.43.1/bin/gccgo", 0xc0001a82a8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/bwkb907myixfzzykp21m9iczkhrq5pfy-binutils-2.43.1/bin/gccgo", 0xc0001a8378, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/5naj7fs8zs8102m3vyhmcfzqwbgwm8hl-rust-default-1.85.0-nightly-2025-01-01/bin/gccgo", 0xc0001a8448, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/9q63d382x7k2h6cc2pfsb39ar3n6f9wg-patchelf-0.15.0/bin/gccgo", 0xc0001a8518, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/jyam95rbd23xdl7l625mb9wdnb9slrz3-talosctl-v1.7.6/bin/gccgo", 0xc0001a85e8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/xjmwzcsmq25v3spfnppvvdnx9vn29h5p-cue-0.12.1/bin/gccgo", 0xc0001a86b8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/ywr4mzg2wq3n846nf56mbk12gfkfsjz7-timoni-0.22.1/bin/gccgo", 0xc0001a8788, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/n2pm65284bjjm2vaxi2cagb4qfl1f0zl-fluxcd-flux2-v2.3.0/bin/gccgo", 0xc0001a8858, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/xx836v15zyfynzpizwx1zd84766swwqh-graalvm-ce-23.0.1/bin/gccgo", 0xc0001a8928, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/bfwsq11yx7llr49z1wk6ig4wdqqk4zwq-skopeo-1.16.1/bin/gccgo", 0xc0001a89f8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/gfskb58icjz5czfz64y6r5kzkqx6v4fz-go-containerregistry-0.20.2-crane/bin/gccgo", 0xc0001a8ac8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/w5fr5cj6habglzpvfm92ibhjxzzsicbr-umoci-0.4.7/bin/gccgo", 0xc0001a8b98, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/pxvgdr50r7301k31cf4ychy3c6nyysj7-sops-3.9.2/bin/gccgo", 0xc0001a8c68, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/iha35mp2hjhc77bkg6mf2zr2gyi6d05s-jq-1.7.1-bin/bin/gccgo", 0xc0001a8d38, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/va3d7gw8c4az0rqywj58ry6i700rddfi-yq-go-4.44.3/bin/gccgo", 0xc0001a8e08, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/4nawfczfxgqwh54qxcnxs5128byr40ji-xxd-tinyxxd-1.3.7/bin/gccgo", 0xc0001a8ed8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/38ydgzfww64vkq9wyi5p0a924jxgaaqk-kubernetes-helm-3.16.3/bin/gccgo", 0xc0001a8fa8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/zhq8dnjbhwspzdglyq28j74axvqyk86q-go-1.23.3/bin/gccgo", 0xc0001a9078, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/9113334r56fmi13i8j6k8r2x92ml3c6b-cargo-1.82.0/bin/gccgo", 0xc0001a9148, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/rkj4nka0cyjnap3l6x2xbgv48fwm2yq1-rustc-wrapper-1.82.0/bin/gccgo", 0xc0001a9218, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/16h31npnbgpkhxp1041dsifiklbw4mpr-pkg-config-wrapper-0.29.2/bin/gccgo", 0xc0001a92e8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/ngiryq0533pyjk7zdmfn7lf2jvb5s6cb-openjdk-17.0.13+11/bin/gccgo", 0xc0001a93b8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/hc0ykbcbbgaj8hdw5l8s53zl29drihpv-moreutils-0.69/bin/gccgo", 0xc0001a9488, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/an8pv9gb1ia005wl7chsq785b30pmilg-rage-0.11.1/bin/gccgo", 0xc0001a9558, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/rf1q2l5zixvmn3aglz5knwmlqyi23y6k-age-plugin-yubikey-0.5.0-unstable-2024-11-02/bin/gccgo", 0xc0001a9628, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/zv1kaq7f1q20x62kbjv6pfjygw5jmwl6-python3-3.12.7/bin/gccgo", 0xc0001a96f8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/k1dnzxa3mbljz0ml453dqxskplg77f8h-maven-3.9.9/bin/gccgo", 0xc0001a97c8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/bqdvkdbmbn94b1712h55alq8pmllp2cn-gradle-8.10.2/bin/gccgo", 0xc0001a9898, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/nmqxyr00in2arwrq5qd1qipsanz1yrn5-python3-3.11.10/bin/gccgo", 0xc0001a9968, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/aj86b5andix94xn08krg56wisfcy5cwy-nodejs-23.2.0/bin/gccgo", 0xc0001a9a38, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/sm0y1qhfyz1jkkkg7q7yj0yr7jlagxsp-binaryen-118/bin/gccgo", 0xc0001a9b08, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/4mkmxv58k3cr69khkkl6yi36addh7i9q-dart-sass-1.80.5/bin/gccgo", 0xc0001a9bd8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/zfml005nx3n0jqwm0rx0iz9gh2044ndp-nix-prefetch-0.4.1/bin/gccgo", 0xc0001a9ca8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/a80s5dp502g9v90sz8gzvhm2kck6i0dr-python3.11-flask-3.0.3/bin/gccgo", 0xc0001a9d78, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/3abwqv1a1bdycmgaydzfw3a0qzxwk8am-systemd-256.8/bin/gccgo", 0xc0001a9e48, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/l6b0m26ck97ajyapz7nkwvyxqqhxmhbp-openssl-3.3.2-bin/bin/gccgo", 0xc0001ac038, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/l05jjpqa7wam5xyi93fxw0l1rwn3ix5n-jdt-language-server-1.40.0/bin/gccgo", 0xc0001ac108, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/d2y8bcf6gg306m1hlji2kn9ya5gmnpw3-typescript-language-server-4.3.3/bin/gccgo", 0xc0001ac1d8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/9fiqwgaqr5inlpjzmp72bm8h543y9p2f-gomod2nix-dev/bin/gccgo", 0xc0001ac2a8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/b1wvkjx96i3s7wblz38ya0zr8i93zbc5-coreutils-9.5/bin/gccgo", 0xc0001ac378, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/w8pnfazxqwmrqmwkb5zrz1bifsd8abxl-findutils-4.10.0/bin/gccgo", 0xc0001ac448, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/cxwsmlr3xh1ml4r0kgdjrknw7504b9f8-diffutils-3.10/bin/gccgo", 0xc0001ac518, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/vmby25zqxnx94awvj0k7zn0rsd0zyrwg-gnused-4.9/bin/gccgo", 0xc0001ac5e8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/85amyk92rg19l4fy0qmy7wr4jmq8p5z0-gnugrep-3.11/bin/gccgo", 0xc0001ac6b8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/nnin69nrnrrmnv2scbwyfkgh1rf51gh1-gawk-5.3.1/bin/gccgo", 0xc0001ac788, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/zhaypw0znkjnymg0rk1599zn21rr0l50-gnutar-1.35/bin/gccgo", 0xc0001ac858, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/a7pimibppfw2m3ryijnwwzx76i780bw2-gzip-1.13/bin/gccgo", 0xc0001ac928, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/vqjygx23hkim1kpidik5xcs9whayf3sr-bzip2-1.0.8-bin/bin/gccgo", 0xc0001ac9f8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/9y5kd90fdbrq3r4yc9mpqn82f93zdgyq-gnumake-4.4.1/bin/gccgo", 0xc0001acac8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/p6k7xp1lsfmbdd731mlglrdj2d66mr82-bash-5.2p37/bin/gccgo", 0xc0001acb98, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/mdmansf6zkzsnrcf4h3yav5kz93rh03y-patch-2.7.6/bin/gccgo", 0xc0001acc68, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/5180mi672sl6ikiwyhvgnxasz6iqxws0-xz-5.6.3-bin/bin/gccgo", 0xc0001acd38, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/g4lksqp6l8qiab4a0as21s6556xh4gyp-file-5.45/bin/gccgo", 0xc0001ace08, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/.direnv/bin/gccgo", 0xc0001aced8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/run/wrappers/bin/gccgo", 0xc0001acfa8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/.local/share/flatpak/exports/bin/gccgo", 0xc0001ad078, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/var/lib/flatpak/exports/bin/gccgo", 0xc0001ad148, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/.nix-profile/bin/gccgo", 0xc0001ad218, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/profile/bin/gccgo", 0xc0001ad2e8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/.local/state/nix/profile/bin/gccgo", 0xc0001ad3b8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/etc/profiles/per-user/joseph/bin/gccgo", 0xc0001ad488, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/var/nix/profiles/default/bin/gccgo", 0xc0001ad558, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/run/current-system/sw/bin/gccgo", 0xc0001ad628, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/mode", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/mode", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local/weekends", O_RDONLY|O_CLOEXEC) = 3
+fcntl(3, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 3, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200002}) = -1 EPERM (Operation not permitted)
+fcntl(3, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=2, ...}) = 0
+read(3, "4\n", 512)                     = 2
+read(3, "", 510)                        = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local/weekends", O_RDONLY|O_CLOEXEC) = 3
+fcntl(3, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 3, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200003}) = -1 EPERM (Operation not permitted)
+fcntl(3, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=2, ...}) = 0
+read(3, "4\n", 512)                     = 2
+read(3, "", 510)                        = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local/go@go1.24.2-go1.24.2-linux-amd64-2025-04-28.v1.count", O_RDWR|O_CREAT|O_CLOEXEC, 0666) = 3
+fcntl(3, F_GETFL)                       = 0x8002 (flags O_RDWR|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 3, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200004}) = -1 EPERM (Operation not permitted)
+fcntl(3, F_GETFL)                       = 0x8802 (flags O_RDWR|O_NONBLOCK|O_LARGEFILE)
+fcntl(3, F_SETFL, O_RDWR|O_LARGEFILE)   = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=16384, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=16384, ...}) = 0
+mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7fe2249c4000
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.work", 0xc0001bd488, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/go.work", 0xc0001bd558, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/go.work", 0xc0001bd628, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/go.work", 0xc0001bd6f8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/go.work", 0xc0001bd7c8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/go.work", 0xc0001bd898, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/go.work", 0xc0001bd968, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "", 0xc0001bda38, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.mod", {st_mode=S_IFREG|0644, st_size=1691, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph", {st_mode=S_IFDIR|0700, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/tmp", {st_mode=S_IFDIR|S_ISVTX|0777, st_size=16384, ...}, AT_SYMLINK_NOFOLLOW) = 0
+openat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.mod", O_RDONLY|O_CLOEXEC) = 6
+fcntl(6, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 6, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200005}) = -1 EPERM (Operation not permitted)
+fcntl(6, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+fstat(6, {st_mode=S_IFREG|0644, st_size=1691, ...}) = 0
+read(6, "module pythoner6.dev/homelab/k8s"..., 1692) = 1691
+read(6, "", 1)                          = 0
+close(6)                                = 0
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/mode", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/.config/go/telemetry/local/upload.token", {st_mode=S_IFREG|0644, st_size=0, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64", {st_mode=S_IFDIR|0555, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.work", 0xc0001ce788, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/go.work", 0xc0001ce858, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/go.work", 0xc0001ce928, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/go.work", 0xc0001ce9f8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/go.work", 0xc0001ceac8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/go.work", 0xc0001ceb98, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/go.work", 0xc0001cec68, 0) = -1 ENOENT (No such file or directory)
+uname({sysname="Linux", nodename="laptop", ...}) = 0
+openat(AT_FDCWD, "/home/joseph/.config/go/telemetry/mode", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.work", 0xc0001cee08, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/go.work", 0xc0001ceed8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/go.work", 0xc0001cefa8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/go.work", 0xc0001cf078, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/go.work", 0xc0001cf148, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/go.work", 0xc0001cf218, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/go.work", 0xc0001cf2e8, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.mod", {st_mode=S_IFREG|0644, st_size=1691, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph", {st_mode=S_IFDIR|0700, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/tmp", {st_mode=S_IFDIR|S_ISVTX|0777, st_size=16384, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/vendor", 0xc0001cfa38, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/joseph/go/go.mod", 0xc0001cfb08, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.mod", O_RDONLY|O_CLOEXEC) = 6
+fcntl(6, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 6, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200006}) = -1 EPERM (Operation not permitted)
+fcntl(6, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+flock(6, LOCK_SH)                       = 0
+read(6, "module pythoner6.dev/homelab/k8s"..., 512) = 512
+read(6, "github.com/google/uuid v1.6.0 //"..., 384) = 384
+read(6, "ct\n\tgithub.com/pelletier/go-toml"..., 512) = 512
+read(6, "2.130.1 // indirect\n\tk8s.io/util"..., 640) = 283
+read(6, "", 357)                        = 0
+flock(6, LOCK_UN)                       = 0
+close(6)                                = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/go.mod", {st_mode=S_IFREG|0644, st_size=1691, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph", {st_mode=S_IFDIR|0700, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph", {st_mode=S_IFDIR|0700, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64", {st_mode=S_IFDIR|0555, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.2.linux-amd64/src", {st_mode=S_IFDIR|0555, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/joseph/dev/homelab/k8s/apis/vendor", 0xc0001ecac8, 0) = -1 ENOENT (No such file or directory)
+futex(0xc000100148, FUTEX_WAKE_PRIVATE, 1) = 1
+sched_yield()                           = 0
+sched_yield()                           = 0
+futex(0xc0000ab528, FUTEX_WAKE_PRIVATE, 1) = 1
+nanosleep({tv_sec=0, tv_nsec=3000}, NULL) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+nanosleep({tv_sec=0, tv_nsec=3000}, NULL) = 0
+rt_sigprocmask(SIG_SETMASK, ~[], [], 8) = 0
+clone(child_stack=0xc000292000, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS, tls=0xc000100898) = 469291
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+futex(0xc000100948, FUTEX_WAKE_PRIVATE, 1) = 1
+openat(AT_FDCWD, "/home/joseph/go/pkg/mod/cache/download/github.com/mitchellh/go-wordwrap/@v/v1.0.1.mod", O_RDONLY|O_CLOEXEC) = 6
+fcntl(6, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_NONBLOCK|O_LARGEFILE) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 6, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249cce200023}) = -1 EPERM (Operation not permitted)
+fcntl(6, F_GETFL)                       = 0x8800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE)
+fcntl(6, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+fstat(6, {st_mode=S_IFREG|0644, st_size=49, ...}) = 0
+read(6, "module github.com/mitchellh/go-w"..., 512) = 49
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+getpid()                                = 469285
+tgkill(469285, 469291, SIGURG)          = 0
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 0
+getpid()                                = 469285
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 469285
+tgkill(469285, 469290, SIGURG)          = 0
+futex(0xc000280148, FUTEX_WAKE_PRIVATE, 1) = 1
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 14
+futex(0xc000100148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc000280528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000100528, FUTEX_WAKE_PRIVATE, 1) = 1
+sched_yield()                           = 0
+futex(0x109b8c0, FUTEX_WAIT_PRIVATE, 4294967295, NULL) = 0
+futex(0xc000100528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc000404148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000404148, FUTEX_WAKE_PRIVATE, 1) = 1
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 7
+setsockopt(7, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(7, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("192.168.1.1")}, 16) = 0
+epoll_ctl(4, EPOLL_CTL_ADD, 7, {events=EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, data=0x7fe2249ccd08000f}) = 0
+getsockname(7, {sa_family=AF_INET, sin_port=htons(54728), sin_addr=inet_addr("192.168.1.34")}, [112 => 16]) = 0
+getpeername(7, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("192.168.1.1")}, [112 => 16]) = 0
+write(7, "\237\337\1\0\0\1\0\0\0\0\0\1\5proxy\6golang\3org\0\0\1"..., 45) = 45
+read(7, 0xc000410000, 1232)             = -1 EAGAIN (Resource temporarily unavailable)
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+epoll_pwait(4, [{events=EPOLLIN, data=0x10bb3c8}], 128, 29993, NULL, 0) = 1
+read(5, "\1\0\0\0\0\0\0\0", 8)          = 8
+epoll_pwait(4, [], 128, 0, NULL, 0)     = 0
+epoll_pwait(4, [{events=EPOLLOUT, data=0x7fe2249ccd080012}], 128, 299, NULL, 0) = 1
+futex(0x109ce20, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc0000aa528, FUTEX_WAKE_PRIVATE, 1) = 1
+getsockopt(6, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+getpeername(6, {sa_family=AF_INET6, sin6_port=htons(443), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "2607:f8b0:4006:81c::2011", &sin6_addr), sin6_scope_id=0}, [112 => 28]) = 0
+futex(0xc000280148, FUTEX_WAKE_PRIVATE, 1) = 1
+getsockname(6, {sa_family=AF_INET6, sin6_port=htons(33090), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "2600:4040:509b:f302:65b3:9539:eb32:7c9b", &sin6_addr), sin6_scope_id=0}, [112 => 28]) = 0
+setsockopt(6, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(6, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+setsockopt(6, SOL_TCP, TCP_KEEPIDLE, [30], 4) = 0
+setsockopt(6, SOL_TCP, TCP_KEEPINTVL, [15], 4) = 0
+setsockopt(6, SOL_TCP, TCP_KEEPCNT, [9], 4) = 0
+futex(0xc000280148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc000280148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc000280148, FUTEX_WAKE_PRIVATE, 1) = 1
+getrandom("\xe1\x57\x70\xe0\xa6\x48\xa7\x2d\xc4\x34\x7c\x14\x6d\xa8\x69\x22\x4e\x3b\xde\x5e\xd6\xc9\x3d\xc5\xe8\x83\xa6\xfa\x4b\xff\x44\x96", 32, 0) = 32
+getrandom("\x7e\xd5\x2a\xf6\x6e\xe1\xac\xba\xde\xb7\x2c\x3b\x21\x32\x31\x7c\xd1\xce\x6d\x03\x96\x4b\xe5\x3b\x4e\x33\xda\x24\xca\xb6\x62\x67", 32, 0) = 32
+getrandom("\xd9\xac\x78\xaf\x62\x0d\x49\x3a\x72\xc1\x1e\x7a\x49\x20\x8b\x5f\xe5\xdb\x56\xe2\xc9\xa9\x8f\x1e\x8f\x40\xa6\x0f\xa8\x8b\x9e\x15", 32, 0) = 32
+getrandom("\xe9\xbb\x7d\xff\x71\xd4\xf1\xff\xfe\xe9\x28\x06\x73\xea\x1f\x6d\x10\xb4\x36\x93\x29\x1b\x56\x1b\x5f\xdc\x40\xe6\x64\xdd\x4f\x29"..., 64, 0) = 64
+write(6, "\26\3\1\5\323\1\0\5\317\3\3\341Wp\340\246H\247-\3044|\24m\250i\"N;\336^\326"..., 1496) = 1496
+read(6, 0xc000162480, 576)              = -1 EAGAIN (Resource temporarily unavailable)
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000404148, FUTEX_WAKE_PRIVATE, 1) = 1
+getpid()                                = 469285
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 469285
+tgkill(469285, 469289, SIGURG)          = 0
+futex(0xc0000aa948, FUTEX_WAKE_PRIVATE, 1) = 1
+getpid()                                = 469285
+tgkill(469285, 469288, SIGURG)          = 0
+futex(0xc0000aad28, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = 0
+getpid()                                = 469285
+tgkill(469285, 469288, SIGURG)          = 0
+futex(0xc000100528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = 0
+futex(0x109ce10, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 EAGAIN (Resource temporarily unavailable)
+epoll_pwait(4, [], 128, 0, NULL, 0)     = 0
+futex(0x109ce20, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc0000aa528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0xc0000aa948, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 ETIMEDOUT (Connection timed out)
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = 0
+mmap(NULL, 262144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe224724000
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+madvise(0xc000770000, 65536, MADV_DONTNEED) = 0
+madvise(0xc000760000, 65536, MADV_DONTNEED) = 0
+madvise(0xc000750000, 65536, MADV_DONTNEED) = 0
+madvise(0xc000740000, 65536, MADV_DONTNEED) = 0
+madvise(0xc000732000, 57344, MADV_DONTNEED) = 0
+madvise(0xc00072c000, 8192, MADV_DONTNEED) = 0
+write(5, "\1\0\0\0\0\0\0\0", 8)         = 8
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000100148, FUTEX_WAKE_PRIVATE, 1) = 1
+getpid()                                = 469285
+tgkill(469285, 469289, SIGURG)          = 0
+futex(0xc000404528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 EAGAIN (Resource temporarily unavailable)
+getpid()                                = 469285
+tgkill(469285, 469289, SIGURG)          = 0
+futex(0xc0000ab528, FUTEX_WAKE_PRIVATE, 1) = 1
+getpid()                                = 469285
+tgkill(469285, 469289, SIGURG)          = 0
+futex(0xc000404528, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce10, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 EAGAIN (Resource temporarily unavailable)
+epoll_pwait(4, [], 128, 0, NULL, 0)     = 0
+futex(0xc0000ab148, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 EAGAIN (Resource temporarily unavailable)
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+madvise(0xc0007f0000, 65536, MADV_DONTNEED) = 0
+madvise(0xc0007e0000, 65536, MADV_DONTNEED) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000404148, FUTEX_WAKE_PRIVATE, 1) = 1
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 824633729472
+getpid()                                = 469285
+tgkill(469285, 469289, SIGURG)          = 0
+getpid()                                = 469285
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=469285, si_uid=1000} ---
+rt_sigreturn({mask=[]})                 = 469285
+tgkill(469285, 469290, SIGURG)          = 0
+futex(0xc000680948, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = -1 EAGAIN (Resource temporarily unavailable)
+epoll_pwait(4, [], 128, 0, NULL, 0)     = 0
+futex(0xc000680948, FUTEX_WAKE_PRIVATE, 1) = 1
+futex(0x109ce38, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=100000}) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+futex(0xc000600148, FUTEX_WAKE_PRIVATE, 1) = 1
+read(6, 0xc000422000, 12288)            = -1 EAGAIN (Resource temporarily unavailable)
+futex(0x109b4e0, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+epoll_pwait(4, [], 128, 0, NULL, 0)     = 0
+epoll_pwait(4,  <unfinished ...>)       = ?
++++ exited with 0 +++

@@ -1,3 +1,7 @@
+[k8s]
+version = "v1.33.1"
+vendorHash = "sha256-RnMBuEEadCJvag93PIeHoiqcZoiT07bvm/IgiGuT/2U="
+
 [talos]
 version = "v1.10.1"
 [talos.talosctl]
@@ -19,3 +23,6 @@ digest = "sha256:cbaabe8ff0b90a025be05ecaf990db209caf4f23c01d40bb0d37a6cddf5bbee
 [talos.images.overlays]
 ref = "ghcr.io/siderolabs/overlays"
 digest = "sha256:c7603238a803779798d52fb4b464434904be9abdd4f4c69ab270fc9a0ed24706"
+
+[cue]
+version = "v0.13.0"
